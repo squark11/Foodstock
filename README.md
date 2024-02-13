@@ -1,25 +1,20 @@
-Projekt składa się z trzech głównych komponentów: backendu w technologii .NET, frontendu w Angularze oraz aplikacji mobilnej w Flutterze.
-Backend (.NET):
-Backend został zaimplementowany przy użyciu technologii .NET i pełni rolę serwera, obsługującego logikę biznesową, komunikację z bazą danych oraz dostarczającego interfejsu programistycznego dla frontendu oraz aplikacji mobilnej. Główne funkcje backendu obejmują:
+The project consists of three main components: a backend in .NET, a frontend in Angular and a mobile application in Flutter. Backend (.NET): The backend has been implemented using .NET technology and acts as a server, handling business logic, database communication and providing the programming interface for the frontend and the mobile application. The main functions of the backend include:
 
-Zarządzanie produktami: Backend umożliwia dodawanie, edycję i usuwanie produktów. Każdy produkt jest przypisany do jednej kategorii.
-Zarządzanie kategoriami: Backend umożliwia dodawanie, edycję i usuwanie kategorii.
-Przeglądanie produktów według kategorii: Backend udostępnia API, umożliwiające przeglądanie produktów na podstawie wybranej kategorii.
+Product management: The backend allows products to be added, edited and deleted. Each product is assigned to one category. Category management: The backend allows you to add, edit and delete categories. Browsing products by category: the Backend provides an API to browse products based on a selected category.
 
-Frontend (Angular):
-Frontend został zaimplementowany w frameworku Angular i dostarcza interfejsu użytkownika umożliwiającego interakcję z systemem. Główne funkcje frontendu obejmują:
+Frontend (Angular): The frontend is implemented in the Angular framework and provides a user interface for interacting with the system. The main functions of the frontend include:
 
-Dodawanie produktów: Użytkownik może dodawać nowe produkty, wprowadzając odpowiednie dane.
-Edycję produktów: Użytkownik ma możliwość modyfikacji istniejących produktów.
-Usuwanie produktów: Użytkownik może usuwać wybrane produkty.
-Zarządzanie kategoriami: Użytkownik ma możliwość dodawania, edycji oraz usuwania kategorii.
-Przeglądanie produktów według kategorii: Użytkownik może przeglądać produkty na podstawie wybranej kategorii.
+Adding products: The user can add new products by entering the relevant data.
+Editing products: The user can modify existing products.
+Deleting products: The user can delete selected products.
+Category management: The user has the possibility to add, edit and delete categories.
+Viewing products by category: The user can browse products based on the selected category.
 
-Aplikacja mobilna (Flutter):
-Aplikacja mobilna została zaimplementowana przy użyciu technologii Flutter i umożliwia użytkownikowi korzystanie z systemu na urządzeniach mobilnych. Główne funkcje aplikacji mobilnej obejmują:
+Mobile application (Flutter):
+The mobile application has been implemented using Flutter technology and allows the user to use the system on mobile devices. The main functions of the mobile app include:
 
-Dodawanie produktów: Użytkownik może dodawać nowe produkty za pomocą formularza.
-Edycję produktów: Użytkownik ma możliwość modyfikacji istniejących produktów.
-Usuwanie produktów: Użytkownik może usuwać wybrane produkty.
-Zarządzanie kategoriami: Użytkownik ma dostęp do funkcjonalności dodawania, edycji oraz usuwania kategorii.
-Przeglądanie produktów według kategorii: Użytkownik może przeglądać produkty na podstawie wybranej kategorii.
+Adding products: The user can add new products using a form.
+Editing products: The user can modify existing products.
+Deleting products: The user can delete selected products.
+Category management: The user has access to the functionality of adding, editing and deleting categories.
+Viewing products by category: The user can browse products based on the selected category.
