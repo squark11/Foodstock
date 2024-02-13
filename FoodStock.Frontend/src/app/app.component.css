@@ -1,0 +1,147 @@
+  .app_container{
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    transition: grid-template-columns 0.3s;
+    height: 100vh;
+  }
+  
+  .arrow-right{
+    content: ">";
+    color:#121A2F;
+  }
+
+ 
+  .menu {
+    transition: transform 0.3s;
+    transform: translateX(0%);
+    background-color: #121A2F;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    z-index: 1;
+    color: #fff;
+    position: relative;
+  }
+  
+  .user-profile {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #ccc;
+    overflow: hidden;
+    background-image: url('/assets/images/guest.png');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .username {
+    margin: 10px 0;
+    font-weight: bold;
+  }
+  
+  .position {
+    margin: 0;
+    color: #777;
+  }
+
+  .hamburger{
+    width: 30px;
+    height: 4px;
+    background: #121A2F;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    border-radius: 50px;
+    cursor: pointer;
+  }
+  .hamburger::before,.hamburger::after{
+    content: "";
+    width: 30px;
+    height: 4px;
+    background: #121A2F;
+    position: absolute;
+    top:9px;
+    border-radius: 50px;
+  }
+  .hamburger::after{
+    top:18px;
+  }
+
+  .cross{
+    width: 30px;
+    position: absolute;
+    margin: 30px 0 0;
+    right: 20px;
+    cursor: pointer;
+  }
+  .cross:before,.cross:after{
+    content: "";
+    width: 30px;
+    height: 2px;
+    background: #fff;
+    display: block;
+    position: absolute;
+    transform: rotate(45deg);
+    border-radius: 50px;
+  }
+  .cross:after{
+    transform: rotate(-45deg);
+  }
+  .menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 50px 0 0;
+    width: 80%;
+    text-align: center;
+  }
+  
+  .menu li {
+  padding: 20px;
+  }
+
+  .menu li {
+  padding: 20px;
+  border-bottom: 1px solid #2d4072;
+  }
+  
+  .menu li a {
+    text-decoration: none;
+    color: #fff;
+  }
+  .menu li:hover{
+    background: #1a2747;
+    transition: 400ms;
+    border-bottom: 4px solid #2d4072;
+  }
+
+  input[type="submit"], input.toAdminPanel{
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 300ms;
+    margin-top: 30px;
+  }
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+
+  .content {
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 2;
+  }
+  input.toAdminPanel{
+    text-align: center;
+  } 
+  input:hover{
+    background-color: #358537;
+  }

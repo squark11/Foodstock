@@ -1,0 +1,34 @@
+<div class="product-details">
+
+ <h2>{{ product.name }}</h2>
+  <div class="info">
+    <div *ngIf="product.categoryName"><strong>Category:</strong> {{ product.categoryName }}</div>
+    <div *ngIf="product.producentName"><strong>Producent:</strong> {{ product.producentName }}</div>
+    <div *ngIf="product.quantity"><strong>Quantity:</strong> {{ product.quantity }}</div>
+    <div *ngIf="product.expirationDate"><strong>Expiration Date:</strong> {{ product.expirationDate }}</div>
+    <div *ngIf="product.supplierName"><strong>Supplier:</strong> {{ product.supplierName }}</div>
+    <div *ngIf="product.deliveryDate"><strong>Delivery Date:</strong> {{ product.deliveryDate | date: 'yyyy-MM-dd' }}</div>
+    <div *ngIf="product.barCode"><strong>Bar Code:</strong> {{ product.barCode }}</div>
+    <div *ngIf="product.addedDate"><strong>Added Date:</strong> {{ product.addedDate }}</div>
+    <div *ngIf="product.user"><strong>Modified by:</strong> {{ product.user.firstName }} {{ product.user.surname }}</div>
+  </div>
+  <button class="orderProduct" (click)="orderModal=!orderModal">
+    Order {{ product.name }}
+  </button>
+
+  <div class="addedStatus" *ngIf="addedStatus">
+    <p  class="added-status-message">Added!</p>
+    <div class="countdown-animation" [@countdownAnimation]></div>
+  </div>
+  
+
+  
+</div>
+<app-add-product-by-id [product]="product" *ngIf="orderModal" (closeModalEvent)="changeStatus($event)"></app-add-product-by-id>
+<footer>
+  <div (click)="goBack()" class="backButton">Back</div>
+  <div class="functionButtons">
+    <button class="editButton" [routerLink]="['/edit-product', product.id]">Edit</button>
+    <button class="deleteButton" (click)="delete(product.id)">Delete</button>
+  </div>
+</footer>

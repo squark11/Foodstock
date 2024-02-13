@@ -1,0 +1,14 @@
+.appModules {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.appModules app-users,
+.appModules app-roles,
+.appModules app-producents,
+.appModules app-suppliers,
+.appModules app-organizations {
+    flex: 0 0 calc(20% - 10px); /* dostosuj szerokość elementu i odstęp między nimi */
+    margin: 20px; /* dostosuj margines według potrzeb */
+    box-sizing: border-box;
+}

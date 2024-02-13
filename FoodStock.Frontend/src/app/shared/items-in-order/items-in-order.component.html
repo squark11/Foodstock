@@ -1,0 +1,33 @@
+<table class="productTable">
+    <thead>
+      <tr>
+        <th>
+          <p>Name</p>
+        </th>
+        <th>
+          <p>Category </p>
+        </th>
+        <th>
+          <p>Producent </p>
+        </th>
+        <th>
+          <p>Quantity </p>
+        </th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody class="productsContainer">
+        <tr *ngFor="let product of orderItems; let i = index">
+          <td>{{ product.name }}</td>
+          <td [routerLink]="['/category',product.categoryId]" class="routerLink">{{ product.categoryName }}</td>
+          <td>{{ product.producentName }}</td>
+          <td>{{ product.quantity }}</td>
+          <td>
+            <button class="material-symbols-rounded" (click)="toggleModal(i)">edit</button>
+            <button class="material-symbols-rounded" (click)="deleteProduct(product.id)">delete</button>
+          </td>
+          <app-edit-item *ngIf="showModal && selectedIndex === i" [orderItem]="product" (closeModalEvent)="toggleModal(i)"></app-edit-item>
+        </tr>
+      </tbody>
+  </table>
+  

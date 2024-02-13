@@ -1,0 +1,29 @@
+<div class="user-info-container" *ngIf="user">
+    <div class="user-info">
+      <h2>User Information</h2>
+      <p><strong>Id:</strong> {{ user.id }}</p>
+      <p><strong>Name:</strong> {{ user.firstName }}</p>
+      <p><strong>Surname:</strong> {{ user.surname }}</p>
+      <p><strong>Email:</strong> {{ user.email }}</p>
+      <p><strong>Role:</strong> {{ user.roleName }}</p>
+    </div>
+    <button (click)="openChangePasswordModal()" class="change-password-btn">Change Password</button>
+  
+    <div *ngIf="isChangePasswordModalOpen" class="modal">
+        <div class="modal-content">
+          <span class="close" (click)="closeChangePasswordModal()">&times;</span>
+          <h2>Change Password</h2>
+          <label for="newPassword">New Password:</label>
+          <input type="password" id="newPassword" [(ngModel)]="newPassword" required>
+        
+          <label for="confirmPassword">Confirm Password:</label>
+          <input type="password" id="confirmPassword" [(ngModel)]="confirmPassword" required>
+        
+          <div *ngIf="passwordError" class="password-error">{{ passwordError }}</div>
+        
+          <button (click)="savePassword()" class="save-btn">Save</button>
+        </div>
+      </div>
+      
+  </div>
+  

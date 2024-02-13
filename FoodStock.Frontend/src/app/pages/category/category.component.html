@@ -1,0 +1,22 @@
+<div [ngClass]="{'slideHide': addCategory}">
+  
+  <app-add-category *ngIf="addCategory" class="addCategoryPopUp" (closePopUp)="addCategory=false; ngOnInit()" [categories]="categories">
+  </app-add-category>
+  
+  <div class="search">
+    <div class="search-input">
+      <input type="text" placeholder="Find product..." [(ngModel)]="inputValue" (ngModelChange)="search()">
+      <div class="search-icon">
+        <img src="assets/images/search-icon.png" alt="Search" width="30px">
+      </div>
+    </div>
+  </div>
+  <div class="items" *ngIf="categories">
+    <app-category-cover class="item" *ngFor="let category of View" [category]="category">
+    </app-category-cover>
+  </div>
+  
+  <footer>
+    <div *ngIf="auth.isAuthenticated" class="addButton" (click)="addCategory=true">Add Category</div>
+  </footer>
+</div>

@@ -1,0 +1,101 @@
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: 'Poppins', sans-serif;
+}
+.flexBlock{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+footer {
+  width: 80%;
+  margin:auto;
+  padding: 20px;
+  display: flex;
+  border-top: 2px solid gray;
+  margin-top: 40px;
+  height: 10vh;
+  align-items: center;
+  justify-content: space-around;
+}
+.functionButtons{
+  display: flex;
+  justify-content: space-between;
+}
+
+.addButton {
+  text-align: right;
+  background-color: #121A2F;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 400ms;
+}
+.addButton:hover {
+  background-color: #fff;
+  border:3px solid #121A2F;
+  color: #121A2F;
+}
+.backButton{
+  background-color: #fff;
+  border:3px solid #121A2F;
+  transition: 400ms;
+  color: #121A2F;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.backButton:hover{
+  background-color: #121A2F;
+  border:3px solid #121A2F;
+  color: #fff;
+}
+
+.editButton {
+  text-align: right;
+  background-color: #121A2F;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  border: 3px solid #121A2F;
+  transition: 400ms;
+}
+
+.editButton:hover {
+  background-color: #fff;
+  border: 3px solid #121A2F;
+  color: #121A2F;
+}
+
+.deleteButton {
+  text-align: right;
+  background-color: #FF0000;
+  border: 3px solid #FF0000;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 400ms;
+  margin-left: 10px;
+}
+
+.deleteButton:hover {
+  background-color: #fff;
+  border: 3px solid #FF0000;
+  color: #FF0000;
+}

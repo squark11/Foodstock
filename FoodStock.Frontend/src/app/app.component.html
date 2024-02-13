@@ -1,0 +1,31 @@
+<div class="app_container" [style.grid-template-columns]="menuTransform + 'px 1fr'">
+  <div class="menu">
+     <div class="cross" (click)="toggleMenu()"></div>
+      <div class="user-profile" *ngIf="auth.isAuthenticated">
+          <a routerLink="/profile">
+            <div class="avatar"></div>
+          </a>
+          <p class="username">{{user.firstName}} {{user.surname}}</p>
+          <p class="position">{{user.roleName}}</p>
+          
+      </div>
+      <app-login *ngIf="!auth.isAuthenticated"></app-login>
+      <ul>
+        <li><a routerLink="">Products</a></li>
+        <li><a routerLink="/category">Categories</a></li>
+        <li *ngIf="auth.isAuthenticated"><a routerLink="/orders">Orders</a></li>
+      </ul>
+      <input *ngIf="auth.isAuthenticated"  type="submit" value="Logout" (click)="auth.logout()">
+      <input *ngIf="auth.isAuthenticated && auth.isAdmin()" class="toAdminPanel" value="Admin Console" [routerLink]="['/admin']" >
+      <p *ngIf="auth.isAuthenticated">
+        Time left: {{ timeLeft }}
+      </p>
+  </div>
+  <div class="content">
+    <router-outlet>
+      <div class="toggle-button" [ngClass]="{'hamburger': isMenuHidden}" (click)="toggleMenu()">
+      </div>
+    </router-outlet>
+  </div>
+
+</div>

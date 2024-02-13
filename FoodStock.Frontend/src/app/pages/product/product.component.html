@@ -1,0 +1,13 @@
+<div class="productList">
+  <div class="nav">
+    <h1>Products</h1>
+    <app-search [products]="products" (searchValueChanged)="search($event)"></app-search>
+  </div>
+ 
+    <app-product-cover [products]="view"> </app-product-cover>
+
+
+  <footer *ngIf="auth.isAuthenticated">
+    <div routerLink="/add-product" class="addButton">Add Product</div>
+  </footer>
+</div>

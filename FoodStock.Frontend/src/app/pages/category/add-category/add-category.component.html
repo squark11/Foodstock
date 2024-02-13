@@ -1,0 +1,6 @@
+<div class="addElements" *ngIf="model">
+    <div class="cross"(click)="closeComponent()"></div>
+    <h1>Add category</h1>
+    <input type="text" class="addCategory" [(ngModel)]="model.categoryName" (keydown.enter)="send()" placeholder="Category Name..." autofocus>
+    <div  class="addButton" (click)="send()">Add Category</div>
+</div>

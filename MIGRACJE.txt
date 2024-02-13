@@ -1,0 +1,4 @@
+cd \FoodStock.Backend\src\FoodStock.Infrastructure
+dotnet ef migrations add "Initial" -o ./DAL/Migrations --startup-project ../FoodStock.Api
+cd \FoodStock.Backend\src\FoodStock.Api
+dotnet ef database update

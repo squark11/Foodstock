@@ -1,0 +1,67 @@
+
+<form (ngSubmit)="edit()" #productForm="ngForm" novalidate>
+  <h1>Edit Product</h1>
+  <div>
+    <label for="name">Nazwa:</label>
+    <input type="text" id="name" name="name" [(ngModel)]="productDetails.name" required>
+    <div *ngIf="productForm.controls['name'].invalid && productForm.controls['name'].touched">
+      Name is required
+    </div>
+  </div>
+
+  <div>
+    <label for="category" >Category:</label>
+    <select name="category" [(ngModel)]="productDetails.categoryId" required>
+      <option *ngFor="let category of categories" [value]="category.id">{{category.categoryName}}</option>
+    </select>
+  </div>
+  
+  <div>
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" name="quantity" [(ngModel)]="productDetails.quantity" required>
+  </div>
+  <div>
+    <label for="barCode">Bar Code:</label>
+    <input type="text" id="barCode" name="barCode" [(ngModel)]="productDetails.barCode" pattern="[0-9]{13}">
+    <div *ngIf="productForm.controls['barCode'].invalid && productForm.controls['barCode'].touched">
+      Bar Code must contain 13 digits.
+    </div>
+  </div>
+
+  <div>
+    <label for="deliveryDate">Delivery Date:</label>
+    <input type="text" id="deliveryDate" name="deliveryDate" [(ngModel)]="productDetails.deliveryDate" required>
+    <div *ngIf="productForm.controls['deliveryDate'].invalid && productForm.controls['deliveryDate'].touched">
+      Delivery date is required
+    </div>
+  </div>
+
+  <div>
+    <label for="expirationDate">Expiration Date:</label>
+    <input type="text" id="expirationDate" name="expirationDate" [(ngModel)]="productDetails.expirationDate" [value]="productDetails.expirationDate" required>
+    <div *ngIf="productForm.controls['expirationDate'].invalid && productForm.controls['expirationDate'].touched">
+      Expiration Date is required.
+    </div>
+    <div *ngIf="isExpirationDateLessThanOneWeek()" class="error-message">
+      Expiration Date must be at least one week ahead.
+    </div>
+  </div>
+  <div>
+    <label for="producent">Producent:</label>
+    <select [(ngModel)]="productDetails.producentId" name="producent" required>
+      <option *ngFor="let producent of producents" [ngValue]="producent.id">{{producent.name}}</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="supplier">Supplier:</label>
+    <select [(ngModel)]="productDetails.supplierId" name="supplier" required>
+      <option *ngFor="let supplier of suppliers" [ngValue]="supplier.id">{{supplier.name}}</option>
+    </select>
+  </div>
+
+  <button type="submit" [disabled]="productForm.invalid">Edit product</button>
+</form>
+<footer>
+  <button (click)="goBack()" class="backButton">Back</button>
+</footer>

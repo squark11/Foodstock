@@ -1,0 +1,19 @@
+<div class="modal">
+    <div class="element">
+      <h2>Role Information</h2>
+      <div *ngIf="role">
+        <p><strong>Role ID:</strong> {{ role.id }}</p>
+        <p>
+          <strong>Role Name:</strong>
+          <span *ngIf="!isEditing || editingField !== 'name'" (click)="toggleEdit('name')">{{ role.name }}</span>
+          <input *ngIf="isEditing && editingField === 'name'" type="text" [(ngModel)]="editedRole.name">
+        </p>
+  
+        <button *ngIf="isEditing" (click)="saveChanges()">Save Changes</button>
+        <button *ngIf="isEditing" (click)="cancelEdit()">Cancel</button>
+  
+        <button (click)="deleteRole(role.id)">Delete Role</button>
+      </div>
+      <span class="close material-symbols-outlined" (click)="closeModal()">close</span>
+    </div>
+  </div>

@@ -1,0 +1,93 @@
+.usersModel {
+    max-width: 400px;
+    border: 2px solid #c9c9c9;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    display: inline-table;
+    min-height: 30vh;
+  }
+  
+  p.title {
+    position: absolute;
+    top: -30px;
+    left: 50px;
+    background-color: #fff;
+    padding: 0 10px;
+    font-weight: 700;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+  }
+  
+  p.title > span {
+    margin-right: 10px;
+  }
+  
+  label.search {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  label.search input[type="search"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    outline: none;
+    width: 100%;
+  }
+  
+  label.search select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+  }
+  
+  table {
+    width: 100%; 
+    max-width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    margin: auto;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+
+  tr.even {
+    background-color: #f2f2f2; 
+  }
+  tr.list:hover {
+    background-color: #d4d4d4;
+    transition: 200ms;
+    cursor: pointer;
+  }
+.addUserBtn{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.addUserBtn span{
+    margin-right: 10px;
+}
+.addUserBtn:hover{
+    color: #8fdb1c;
+    transition: 200ms;
+    cursor: pointer;
+}

@@ -1,0 +1,32 @@
+
+<div class="productList">
+  <div class="nav">
+    <div class="categoryName flexBlock" *ngIf="!editIsActive && !showDeleteConfirmation">
+      <h1>{{category.categoryName}}</h1>
+      <span class="material-symbols-rounded" (click)="editIsActive=true" *ngIf="auth.isAuthenticated">edit</span>
+        <span class="delete material-symbols-rounded"(click)="delete()" *ngIf="auth.isAuthenticated"> delete</span>
+    </div>
+    
+    <div class="categoryName flexBlock" *ngIf="editIsActive">
+      <app-edit [category]="category" (editStatusChanged)="onEditStatusChanged($event)"></app-edit>
+    </div>
+    
+    <div *ngIf="showDeleteConfirmation">
+      <span (click)="deleteConfirmed(category.id)">Confirm</span>
+      <span (click)="cancelDelete()">Exit</span>
+    </div>
+    
+    <app-search [products]="products" (searchValueChanged)="search($event)"></app-search>
+  </div>
+
+
+  <app-product-cover [products]="view"> </app-product-cover>
+
+  <footer>
+    <div (click)="goBack()" class="backButton">Back</div>
+    <div class="functionButtons" *ngIf="auth.isAuthenticated">
+      <div routerLink="/add-product" class="addButton">Add Product</div>   
+    </div>
+  </footer>
+
+</div>

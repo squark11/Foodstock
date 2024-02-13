@@ -1,0 +1,46 @@
+<div class="modal">
+    <div class="element">
+      <h2>{{ isEditMode ? 'Edit Organization' : 'Add Organization' }}</h2>
+  
+      <form (submit)="onSubmit()">
+        <div class="formItems">
+            <label for="organizationId" *ngIf="isEditMode">Organization ID:</label>
+            <input type="text" id="organizationId" name="organizationId" [(ngModel)]="selectedOrganization.id" readonly *ngIf="isEditMode">
+      
+            <label for="organizationName">Organization Name:</label>
+            <input type="text" id="organizationName" name="organizationName" [(ngModel)]="selectedOrganization.name ">
+      
+            <label for="ownerName">Owner's Name:</label>
+            <input type="text" id="ownerName" name="ownerName" [(ngModel)]="selectedOrganization.ownerName">
+      
+            <label for="ownerSurname">Owner's Surname:</label>
+            <input type="text" id="ownerSurname" name="ownerSurname" [(ngModel)]="selectedOrganization.ownerSurname">
+      
+            <label for="nip">NIP:</label>
+            <input type="text" id="nip" name="nip" [(ngModel)]="selectedOrganization.nip" readonly *ngIf="isEditMode">
+            <input type="text" id="nip" name="nip" [(ngModel)]="selectedOrganization.nip" *ngIf="!isEditMode">
+      
+            <label for="country">Country:</label>
+            <input type="text" id="country" name="country" [(ngModel)]="selectedOrganization.country">
+      
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" [(ngModel)]="selectedOrganization.city">
+      
+            <label for="cityCode">City Code:</label>
+            <input type="text" id="cityCode" name="cityCode" [(ngModel)]="selectedOrganization.cityCode">
+      
+            <label for="street">Street:</label>
+            <input type="text" id="street" name="street" [(ngModel)]="selectedOrganization.street">
+      
+            <label for="streetNumber">Street Number:</label>
+            <input type="text" id="streetNumber" name="streetNumber" [(ngModel)]="selectedOrganization.streetNumber">
+        </div>
+       
+  
+        <button type="submit">{{ isEditMode ? 'Update Organization' : 'Add Organization' }}</button>
+      </form>
+  
+      <span class="close material-symbols-outlined" (click)="closeModal()">close</span>
+    </div>
+  </div>
+  

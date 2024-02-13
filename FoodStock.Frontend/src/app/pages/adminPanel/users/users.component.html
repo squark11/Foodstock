@@ -1,0 +1,33 @@
+<div class="usersModel">
+    <p class="title"><span class="material-symbols-outlined"> group </span> Users</p>
+    <label class="search">
+      <input type="search" #searchInput (input)="search(searchInput.value)" placeholder="Jan Kowalski...">
+      <select [(ngModel)]="roleFilter" (change)="search(searchInput.value)">
+        <option value="">All Roles</option>
+        <option *ngFor="let role of uniqueRoles" [value]="role">{{ role }}</option>
+      </select>
+    </label>
+    <table>
+      <thead>
+        <tr>
+          <th>Imię Nazwisko</th>
+          <th>email</th>
+          <th>Rola</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let person of filteredUsers; let i = index" [ngClass]="{'even': i % 2 === 0}" class="list" (click)="toggleInfo(person.id)">
+          <td>{{ person.firstName }} {{ person.surname }}</td>
+          <td>{{ person.email }}</td>
+          <td>{{ person.roleName }}</td>
+        </tr>
+      </tbody> 
+    </table>
+    <p class="addUserBtn" (click)="toggleAddUser()">
+        <span class="material-symbols-outlined"> add_circle </span> Add User
+      </p>
+  </div>
+  
+  <app-user *ngIf="activeInfo" [userId]="userId" class="modal" (closeModalEvent)="handleModalClose()"></app-user>
+  <app-add-user *ngIf="activeAddUser" class="modal" (closeModalEvent)="handleModalAddUserClose()"></app-add-user>
+  

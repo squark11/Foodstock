@@ -1,0 +1,58 @@
+<table class="productTable">
+  <thead>
+    <tr>
+      <th>
+        <p>Name <span class="material-symbols-rounded" 
+          (click)="sort('name')"
+          [ngClass]="sortDirection === 'asc' && sortField=='name'? 'sorted' : 'unsorted'"
+          >expand_more</span></p>
+      </th>
+      <th>
+        <p>Category <span class="material-symbols-rounded" 
+          (click)="sort('categoryName')"
+          [ngClass]="sortDirection === 'asc' && sortField=='categoryName'? 'sorted' : 'unsorted'"
+          >expand_more</span></p>
+      </th>
+      <th>
+        <p>Producent <span class="material-symbols-rounded" 
+          (click)="sort('producentName')"
+          [ngClass]="sortDirection === 'asc' && sortField=='producentName'? 'sorted' : 'unsorted'"
+          >expand_more</span></p>
+      </th>
+      <th>
+        <p>Expiration Date <span class="material-symbols-rounded" 
+          (click)="sort('expirationDate')"
+          [ngClass]="sortDirection === 'asc' && sortField=='expirationDate'? 'sorted' : 'unsorted'"
+          >expand_more</span></p>
+      </th>
+      <th>
+        <p>Supplier <span class="material-symbols-rounded" 
+          (click)="sort('supplierName')"
+          [ngClass]="sortDirection === 'asc' && sortField=='supplierName'? 'sorted' : 'unsorted'"
+          >expand_more</span></p>
+      </th>
+      <th>
+        <p>Quantity <span class="material-symbols-rounded" 
+          (click)="sort('quantity')"
+          [ngClass]="sortDirection === 'asc' && sortField=='quantity'? 'sorted' : 'unsorted'"
+          >expand_more</span></p>
+      </th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody class="productsContainer">
+    <tr *ngFor="let product of products">
+      <td>{{ product.name }}</td>
+      <td [routerLink]="['/category',product.categoryId]" class="routerLink">{{ product.categoryName }}</td>
+      <td>{{ product.producentName }}</td>
+      <td>{{ product.expirationDate | date: 'yyyy-MM-dd' }}</td>
+      <td>{{ product.supplierName }}</td>
+      <td>{{ product.quantity }}</td>
+      <td>
+        <a *ngIf="auth.isAuthenticated" [routerLink]="['/products', product.id]"><span class="material-symbols-rounded">
+            info
+          </span></a>
+      </td>
+    </tr>
+  </tbody>
+</table>

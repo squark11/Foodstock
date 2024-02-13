@@ -1,0 +1,35 @@
+<div class="modal">
+    <div class="element">
+      <h2>User Information</h2>
+      <div *ngIf="user">
+        <p><strong>User ID:</strong> {{ user.id }}</p>
+        <p>
+          <strong>First Name:</strong>
+          <span *ngIf="!isEditing || editingField !== 'firstName'" (click)="toggleEdit('firstName')">{{ user.firstName }}</span>
+          <input *ngIf="isEditing && editingField === 'firstName'" type="text" [(ngModel)]="editedUser.firstName">
+        </p>
+        <p>
+          <strong>Last Name:</strong>
+          <span *ngIf="!isEditing || editingField !== 'surname'" (click)="toggleEdit('surname')">{{ user.surname }}</span>
+          <input *ngIf="isEditing && editingField === 'surname'" type="text" [(ngModel)]="editedUser.surname">
+        </p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p>
+          <strong>Role:</strong>
+          <span *ngIf="!isEditing || editingField !== 'roleName'" (click)="toggleEdit('roleName')">{{ user.roleName }}</span>
+          <select *ngIf="isEditing && editingField === 'roleName'" [(ngModel)]="editedUser.roleId">
+            <option *ngFor="let role of uniqueRoles" [value]="role.id" [selected]="role[1]">{{ role.name }}</option>
+          </select>
+        </p>
+  
+        <button *ngIf="isEditing && passwordsMatch" (click)="saveChanges()">Save Changes</button>
+        <button *ngIf="isEditing" (click)="cancelEdit()">Cancel</button>
+  
+        <button (click)="deleteUser()">Delete User</button>
+        
+      </div>
+      
+      <span class="close material-symbols-outlined" (click)="closeModal()">close</span>
+    </div>
+  </div>
+  

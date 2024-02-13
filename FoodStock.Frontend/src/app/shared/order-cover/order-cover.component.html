@@ -1,0 +1,29 @@
+<div class="card-header" (click)="toggleSubcategories()">
+  {{order.supplier.name}}
+  <div>
+    {{order.orderStatus}}
+    <span class="material-symbols-rounded"
+      [ngClass]="sortDirection === 'desc' ? 'active' : 'disabled'">expand_more
+    </span>
+  </div>
+  <div class="progressBar" [ngClass]="{
+    'new': order.orderStatus === 'New',
+    'accepted': order.orderStatus === 'Accepted',
+    'send': order.orderStatus === 'Send',
+    'received': order.orderStatus === 'Received',
+    'rejected': order.orderStatus === 'Rejected'
+  }"></div>
+</div>
+<div *ngIf="subcategoriesVisible" class="card-body">
+  <app-items-in-order [orderItemId]="order.id"></app-items-in-order>
+  <app-status-modal *ngIf="statusActive" (closeModalEvent)="statusModal()" [order]="order"></app-status-modal>
+  <div class="card-actions">
+    <div class="left-actions">
+      <button class="btn btn-sm btn-success add-button" (click)="navigateToAddItem()">Add Item</button>
+    </div>
+    <div class="right-actions">
+      <button class="btn btn-sm btn-danger delete-button" *ngIf="order.orderItems.length===0" (click)="deleteOrder(order.id)">Delete</button>
+      <button  *ngIf="currentUser==='494fbfca-ff6f-4f16-b16a-58e14b6a2354'" class="btn btn-sm btn-primary edit-button" (click)="statusModal()">Change Status</button>
+    </div>
+  </div>
+</div>

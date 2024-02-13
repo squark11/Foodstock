@@ -1,0 +1,27 @@
+<div class="roleModel">
+    <p class="title"><span class="material-symbols-outlined"> altitude </span> Roles</p>
+    <label class="search">
+      <input type="search" #searchInput (input)="search(searchInput.value)" placeholder="Admin...">
+    </label>
+    <table>
+      <thead>
+        <tr>
+          <th>Nr</th>
+          <th>Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let role of filteredRoles; let i = index" [ngClass]="{'even': i % 2 === 0}" class="list" (click)="toggleInfo(role.id)">
+          <td>{{ i }}</td>
+          <td>{{ role.name }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="addRoleBtn" (click)="toggleAddRole()">
+        <span class="material-symbols-outlined"> add_circle </span> Add Role
+      </p>
+  </div>
+
+  <app-role-cover *ngIf="activeInfo" [roleId]="roleId" class="modal" (closeModalEvent)="handleModalClose()"></app-role-cover>
+  <app-add-role *ngIf="activeAddRole" class="modal" (closeModalEvent)="handleModalAddRoleClose()"></app-add-role>

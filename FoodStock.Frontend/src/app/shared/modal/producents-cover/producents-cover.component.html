@@ -1,0 +1,17 @@
+<div class="modal">
+    <div class="element">
+      <h2>{{ isEditMode ? 'Edit Producer' : 'Add Producer' }}</h2>
+
+      <form (submit)="onSubmit()">
+        <label for="producerId" *ngIf="isEditMode">Producer ID: </label>
+        <input type="text" id="producerId" name="producerId" [(ngModel)]="selectedProducent.id" readonly *ngIf="isEditMode">
+  
+        <label for="producerName">Producer Name:</label>
+        <input type="text" id="producerName" name="producerName" [(ngModel)]="selectedProducent.name">
+        
+        <button type="submit">{{ isEditMode ? 'Update Producer' : 'Add Producer' }}</button>
+        <button *ngIf="isEditMode" ngClass="delete" (click)="deleteProducer()">Delete</button>
+      </form>
+      <span class="close material-symbols-outlined" (click)="closeModal()">close</span>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="container mt-4">
+<h1>Add item</h1>
+<form (ngSubmit)="submitForm()">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" [(ngModel)]="orderItem.name" class="form-control" required>
+    </div>
+  
+    <div class="form-group">
+      <label for="quantity">Quantity:</label>
+      <input type="number" id="quantity" name="quantity" [(ngModel)]="orderItem.quantity" class="form-control" required>
+    </div>
+  
+    <div class="form-group">
+      <label for="categoryId">Category ID:</label>
+      <select id="categoryId" name="categoryId" [(ngModel)]="orderItem.categoryId" class="form-control" required>
+        <option *ngFor="let category of categories" [value]="category.id">{{ category.categoryName }}</option>
+      </select>
+    </div>
+  
+    <div class="form-group">
+      <label for="producentId">Producent:</label>
+      <select id="producentId" name="producentId" [(ngModel)]="orderItem.producentId" class="form-control" required>
+        <option *ngFor="let producent of producents" [value]="producent.id">{{ producent.name }}</option>
+      </select>
+    </div>
+  
+    <div class="form-group">
+      <label for="barCode">Bar Code:</label>
+      <input type="text" id="barCode" name="barCode" [(ngModel)]="orderItem.barCode" class="form-control" required>
+    </div>
+  
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button (click)="goBack()" class="backButton">Back</button>
+  </form>
+</div>

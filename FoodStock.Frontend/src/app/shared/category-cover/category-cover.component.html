@@ -1,0 +1,6 @@
+<div class="item" [routerLink]="['/category/' + category.id]">
+    <div class="circle">
+      <img [src]="getImagePath(category.categoryName)" [alt]="category.categoryName" />
+    </div>
+    <p>{{category.categoryName}}</p>
+  </div>

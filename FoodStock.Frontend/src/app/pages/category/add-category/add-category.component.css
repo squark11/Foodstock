@@ -1,0 +1,60 @@
+.addElements {
+    background: #fff;
+    position: relative;
+    width: 500px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    margin: auto;
+  }
+ input {
+    padding: 10px;
+    width: 300px;
+    border: none;
+    border-radius: 50px;
+    margin:20px 0;
+    box-shadow: 2px 0px 6px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+input:focus {
+  outline: none;
+}
+.cross{
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    padding: 10px;
+    position: absolute;
+    top:20px;
+    right: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 200ms;
+  }
+  .cross:hover{
+    background: #121A2F;
+  }
+  .cross:hover:before,.cross:hover:after
+  {
+    background: #fff;
+  }
+  .cross:before,.cross:after{
+    content: "";
+    width: 30px;
+    height: 2px;
+    background: #121A2F;
+    display: block;
+    position: absolute;
+    transform: rotate(45deg);
+    border-radius: 50px;
+  }
+  .cross:after{
+    transform: rotate(-45deg);
+  }

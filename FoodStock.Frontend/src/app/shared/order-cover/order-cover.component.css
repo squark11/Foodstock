@@ -1,0 +1,123 @@
+.card-header {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .card-body {
+    padding: 10px;
+    border-top: 1px solid #ddd;
+  }
+  
+  .material-symbols-rounded {
+    font-size: 20px;
+    margin-left: 10px;
+  }
+  
+  .active {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .disabled {
+    transform: rotate(0deg);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .btn {
+    margin-top: 10px;
+    margin-right: 10px;
+  }
+  .card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .left-actions {
+    display: flex;
+  }
+  
+  .left-actions button {
+    margin-right: 10px;
+  }
+  
+  .right-actions button {
+    margin-left: 10px;
+  }
+  
+  .add-button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  
+  .add-button:hover {
+    background-color: #218838;
+  }
+  
+  .delete-button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  
+  .delete-button:hover {
+    background-color: #c82333;
+  }
+  
+  .edit-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  
+  .edit-button:hover {
+    background-color: #0056b3;
+  }
+
+  .progressBar {
+    position: absolute;
+    left:0;
+    width: 100%;
+    height: 3px;
+    bottom:-6px;
+    background-color: #eee;
+  }
+  
+  .new {
+    background-color: #3498db; /* Blue for 'new' state */
+    width: 20%;
+  }
+  
+  .accepted {
+    background-color: #2ecc71; /* Green for 'accepted' state */
+    width: 40%;
+  }
+  
+  .send {
+    background-color: #f39c12; /* Orange for 'send' state */
+    width: 60%;
+  }
+  
+  .received {
+    background-color: #27ae60; /* Green for 'received' state */
+    width: 80%;
+  }
+  
+  .rejected {
+    background-color: #e74c3c; /* Red for 'rejected' state */
+    width: 100%;
+  }

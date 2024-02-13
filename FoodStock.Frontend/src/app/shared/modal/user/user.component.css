@@ -1,0 +1,79 @@
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  }
+
+  .element {
+    width: 300px; 
+    max-width: 100%; 
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px; 
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3); 
+    position: relative;
+  }
+  .close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  .element h2 {
+    font-size: 18px; 
+    margin-bottom: 10px; 
+  }
+  
+  .element p {
+    margin: 10px 0; 
+  }
+  
+  .element input {
+    border: none;
+    background: none;
+    outline: none;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+  }
+  
+  .element select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+  }
+  
+  .element button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .element button:hover {
+    background-color: #0056b3;
+  }

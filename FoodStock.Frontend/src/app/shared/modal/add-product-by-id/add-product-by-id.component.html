@@ -1,0 +1,21 @@
+<div class="modal">
+    <div class="element">
+      <span class="close material-symbols-outlined" (click)="closeModal(false)">close</span>
+      <div>
+        <p>Zamawiasz: {{ product.name }}</p>
+        <form (ngSubmit)="onSubmit()">
+          <div>
+            <label for="quantity">Ilość:</label>
+            <input type="number" id="quantity" name="quantity" [(ngModel)]="orderPorduct.quantity" required />
+          </div>
+          <div>
+            <label for="supplier">Dostawca:</label>
+            <select id="supplier" name="supplier" [(ngModel)]="orderPorduct.orderId" required>
+              <option *ngFor="let supplier of orders" [value]="supplier.id">{{supplier.supplier.name}}</option>
+            </select>
+          </div>
+          <button type="submit">Zamów</button>
+        </form>
+      </div>
+    </div>
+  </div>
